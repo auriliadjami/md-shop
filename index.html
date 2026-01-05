@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MD SHOP APPS PREMIUM</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="brand">
+        <!-- OPSIONAL LOGO GAMBAR:
+             taruh logo.png di folder yang sama, lalu uncomment blok di bawah
+        -->
+        <div class="logo-img">
+          <img src="/assets/logo md shop.png" alt="MD SHOP APPS PREMIUM Logo" />
+        </div>
+
+        <div class="brand-text">
+          <h1>MD SHOP APPS PREMIUM</h1>
+          <p class="subtitle">Official Catalogue — Premium Apps & Subscription Services</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a id="waAdminTop" class="btn primary" href="#" rel="noopener">💬 Tanya Admin</a>
+        <a class="btn ghost" href="#catalog">📦 Lihat Katalog</a>
+      </div>
+
+      <div class="notice">
+        <span>🎗</span>
+        <p>Silakan pilih layanan yang kamu butuhkan — admin siap bantu cek harga & paket tersedia 💼✨</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="catalog">
+    <section class="toolbar">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Cari layanan… (contoh: canva / tiktok / robux / frbx vilog)" autocomplete="off" />
+        <button id="clearBtn" class="btn small" type="button" title="Reset">Reset</button>
+      </div>
+
+      <div class="toolbar-row">
+        <div class="chips" aria-label="Filter huruf">
+          <button class="chip active" data-filter="ALL" type="button">Semua</button>
+          <button class="chip" data-filter="A-F" type="button">A–F</button>
+          <button class="chip" data-filter="G-L" type="button">G–L</button>
+          <button class="chip" data-filter="M-R" type="button">M–R</button>
+          <button class="chip" data-filter="S-Z" type="button">S–Z</button>
+        </div>
+
+        <div class="toolbar-actions">
+          <select id="categorySelect" class="select">
+            <option value="ALL">Semua Kategori</option>
+            <option value="AI">AI</option>
+            <option value="Design">Design</option>
+            <option value="Editing">Editing</option>
+            <option value="Sosmed">Sosmed</option>
+            <option value="Game">Game</option>
+            <option value="Meeting">Meeting</option>
+            <option value="Streaming">Streaming</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+
+          <button id="sortBtn" class="btn small" type="button">Sort: A → Z</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <span id="statsText">Memuat…</span>
+      </div>
+    </section>
+
+    <section class="grid" id="appsGrid" aria-live="polite"></section>
+
+    <section class="footer-card">
+      <div class="footer-card-inner">
+        <div>
+          <h2>Butuh cek harga & paket?</h2>
+          <p>Klik “Detail & Paket” → pilih paket → order via WhatsApp.</p>
+        </div>
+        <a id="waAdminBottom" class="btn primary" href="#" rel="noopener">💬 Chat Admin Sekarang</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> MD SHOP APPS PREMIUM • Katalog Premium Apps</p>
+    </footer>
+  </main>
+
+  <!-- MODAL DETAIL -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <div class="modal-head-text">
+          <h3 id="modalTitle">Detail</h3>
+          <p id="modalSubtitle" class="meta"></p>
+          <div class="pill-row">
+            <span class="pill" id="modalCategoryPill">Kategori</span>
+            <span class="pill" id="modalPricePill">Harga</span>
+          </div>
+        </div>
+        <button class="icon-btn" id="closeModalBtn" aria-label="Tutup">✕</button>
+      </div>
+
+      <!-- ✅ BODY MODAL SCROLL -->
+      <div class="modal-body">
+        <div id="modalPackages" class="packages"></div>
+
+        <div class="notes">
+          <h4>📌 Catatan</h4>
+          <ul id="modalNotes"></ul>
+        </div>
+      </div>
+
+      <div class="modal-foot">
+        <a id="modalAskBtn" class="btn ghost" href="#" rel="noopener">💬 Tanya Admin</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
